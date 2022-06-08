@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { styled } from '@mui/system';
-import { Container, Slide } from '@mui/material';
 
-const HamburgerMenu = styled(Container)(({ theme }) => ({
+import { Container, Slide, styled } from '@mui/material';
+
+const StyledDrawerBox = styled(Container)(({ theme }) => ({
   display: 'none',
   position: 'absolute',
   top: '72px',
@@ -21,11 +20,9 @@ const HamburgerMenu = styled(Container)(({ theme }) => ({
 const DrawerBox = () => {
   return (
     <Slide direction='left' in={true} mountOnEnter unmountOnExit>
-      {<HamburgerMenu />}
+      {<StyledDrawerBox />}
     </Slide>
   );
 };
-
-DrawerBox.propTypes = {};
 
 export default DrawerBox;

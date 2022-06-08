@@ -1,12 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { styled } from '@mui/system';
-import { Container } from '@mui/material';
+
+import { Container, styled, useMediaQuery, useTheme } from '@mui/material';
+
 import backgroundDesktop from '../../assets/suggestions/desktop/background-header.png';
 import backgroundTablet from '../../assets/suggestions/tablet/background-header.png';
 import backgroundMobile from '../../assets/suggestions/mobile/background-header.png';
 
-const HeaderContainer = styled(Container)(({ theme }) => ({
+import Headline from '../headline/Headline';
+import Hamburger from '../hamburger/Hamburger';
+
+const StyledHeader = styled(Container)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-end',
@@ -16,6 +19,7 @@ const HeaderContainer = styled(Container)(({ theme }) => ({
   backgroundImage: `url(${backgroundDesktop})`,
   backgroundRepeat: 'no-repeat',
   color: theme.palette.common.white,
+
   [theme.breakpoints.down('desktop')]: {
     width: '223px',
     height: '178px',
@@ -30,13 +34,19 @@ const HeaderContainer = styled(Container)(({ theme }) => ({
     backgroundSize: 'cover',
     borderRadius: 0,
     padding: '16px 24px',
+    gridColumn: '1/3',
   },
 }));
 
-const Header = ({ children }) => {
-  return <HeaderContainer>{children}</HeaderContainer>;
+const Header = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('tablet'));
+  return (
+    <StyledHeader>
+      <Headline />
+      {matches && <Hamburger />}
+    </StyledHeader>
+  );
 };
-
-Header.propTypes = {};
 
 export default Header;
