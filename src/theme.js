@@ -8,13 +8,14 @@ export const theme = createTheme({
   breakpoints: {
     values: {
       desktop: 1110,
-      tablet: 768,
+      tablet: 689,
     },
   },
-  pallete: {
+  palette: {
     common: {
       black: '#000',
       white: '#FFF',
+      background: '#F7F8FD',
     },
     primary: {
       main: '#373F68',
@@ -30,6 +31,7 @@ export const theme = createTheme({
       active: '#4661E6',
       hover: '#CFD7FF',
       main: '#F2F4FE',
+      hoverActive: '#7C91F9',
     },
     additionaly: {
       planned: '#F49F85',
@@ -83,7 +85,7 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: '#F7F8FD',
+          background: '#F7F8FD'
         },
       },
     },

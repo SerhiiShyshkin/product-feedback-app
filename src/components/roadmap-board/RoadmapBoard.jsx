@@ -7,7 +7,11 @@ const RoadmapBorderContainer = styled(Container)(({ theme }) => ({
     width: '255px',
     height: '166px',
     background: theme.palette.common.white,
-    [theme.breakpoints.down('desktop')]: {},
+    margin: 0,
+    [theme.breakpoints.down('desktop')]: {
+      width: '223px',
+    height: '178px',
+    },
   }));
 
 const RoadmapBoard = props => {
