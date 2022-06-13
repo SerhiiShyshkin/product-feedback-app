@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Container, styled } from '@mui/material';
@@ -31,7 +31,7 @@ const CategoriesFilter = () => {
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
-  const { categories } = useSelector((state) => state.categories);
+  const { categories } = useSelector(({ categories }) => categories);
 
   return (
     <StyledCategoriesFilter>
