@@ -9,9 +9,12 @@ import CategoriesFilter from '../components/categories-filter/CategoriesFilter';
 import RoadmapBoard from '../components/roadmap-board/RoadmapBoard';
 import SuggestionsHeader from '../components/suggtestions-header/SuggestionsHeader';
 
+import { SuggestionsList } from '../components/suggestions-list/SuggestionsList';
+
 const StyledSugestionsPage = styled(Container)(({ theme }) => ({
   display: 'grid',
   gridTemplateColumns: 'auto 1fr',
+  gridTemplateRows: 'auto',
   gap: '24px 30px',
   width: theme.breakpoints.values.desktop,
   height: '100%',
@@ -45,6 +48,7 @@ const StyledSidebar = styled(Container)(({ theme }) => ({
 
 const StyledMain = styled(Container)(({ theme }) => ({
   padding: 0,
+  
   [theme.breakpoints.down('desktop')]: {
     gridColumn: '1/3',
   },
@@ -61,8 +65,9 @@ const SuggestionsPage = () => {
         <CategoriesFilter />
         <RoadmapBoard />
       </StyledSidebar>
-      <StyledMain>
+      <StyledMain >
         <SuggestionsHeader />
+        <SuggestionsList />
       </StyledMain>
       {sidebarState && <Transparent />}
       {sidebarState && <DrawerBox />}
@@ -72,6 +77,7 @@ const SuggestionsPage = () => {
       <Header />
       <StyledMain>
         <SuggestionsHeader />
+        <SuggestionsList />
       </StyledMain>
       <StyledSidebar>
         <CategoriesFilter />

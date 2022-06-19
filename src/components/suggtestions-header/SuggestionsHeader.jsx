@@ -8,6 +8,7 @@ const StyledSuggestionsHeader = styled(Container)(({ theme }) => ({
   height: '72px',
   background: theme.palette.primary.main,
   color: 'white',
+  
   [theme.breakpoints.down('desktop')]: {
     width: 'inherit',
   },

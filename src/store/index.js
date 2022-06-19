@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import toggleSidebarReducer from './toggleSidebarSlice';
-import toggleCategory from '../components/categories-filter/categoriesFilterSlice';
-
+import categoriesFilterReducer from '../components/categories-filter/categoriesFilterSlice';
+import suggestionsListReducer from '../components/suggestions-list/suggestionsListSlice';
 
 export default configureStore({
-  reducer: { toggle: toggleSidebarReducer, categories: toggleCategory },
+  reducer: {
+    toggle: toggleSidebarReducer,
+    categories: categoriesFilterReducer,
+    suggestions: suggestionsListReducer,
+  },
 });

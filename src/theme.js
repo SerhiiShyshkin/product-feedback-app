@@ -63,6 +63,12 @@ export const theme = createTheme({
       lineHeight: '20px',
       letterSpacing: '-0.2px',
     },
+    h5: {
+      fontSize: '13px',
+      fontWeight: '700',
+      lineHeight: '19px',
+      letterSpacing: '-0.18px',
+    },
     body1: {
       fontSize: '16px',
       fontWeight: '400',

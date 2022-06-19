@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { Container, styled } from '@mui/material';
 import {
@@ -7,7 +7,7 @@ import {
   CategoriesItemActive,
 } from '../categories-item/CategoriesItem';
 
-import { fetchCategories } from './categoriesFilterSlice';
+
 
 const StyledCategoriesFilter = styled(Container)(({ theme }) => ({
   display: 'flex',
@@ -26,16 +26,12 @@ const StyledCategoriesFilter = styled(Container)(({ theme }) => ({
 }));
 
 const CategoriesFilter = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCategories());
-  }, [dispatch]);
-  const { categories } = useSelector(({ categories }) => categories);
+  
+//const { categories } = useSelector(({ categories }) => categories);
 
   return (
     <StyledCategoriesFilter>
-      {categories.map(({ id, name, active }) =>
+      {[].map(({ id, name, active }) =>
         active ? (
           <CategoriesItemActive id={id} name={name} key={id} />
         ) : (
