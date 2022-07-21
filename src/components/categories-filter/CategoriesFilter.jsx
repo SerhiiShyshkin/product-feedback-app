@@ -1,13 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-
 import { Container, styled } from '@mui/material';
 import {
   CategoriesItem,
   CategoriesItemActive,
 } from '../categories-item/CategoriesItem';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCategory } from './categoriesFilterSlice';
 
+import { useGetCategoriesQuery } from '../../api/settingsApi';
 
 const StyledCategoriesFilter = styled(Container)(({ theme }) => ({
   display: 'flex',
@@ -25,21 +26,28 @@ const StyledCategoriesFilter = styled(Container)(({ theme }) => ({
   },
 }));
 
-const CategoriesFilter = () => {
+export const CategoriesFilter = () => {
+  const { data = [], isLoading } = useGetCategoriesQuery();
+
   
-//const { categories } = useSelector(({ categories }) => categories);
+
+  if (isLoading) return <h3>Loading ...</h3>;
+  const res = data.find(({id}) => id === 3)
+  
+
+  const all = { id: 1, name: 'all', value: 'All' };
 
   return (
     <StyledCategoriesFilter>
-      {[].map(({ id, name, active }) =>
-        active ? (
-          <CategoriesItemActive id={id} name={name} key={id} />
+      {[all, ...data].map(({ id, name, value }) =>
+        false ? (
+          <CategoriesItemActive key={id} id={id} name={name} label={value} />
         ) : (
-          <CategoriesItem id={id} name={name} key={id} />
+          <CategoriesItem key={id} id={id} name={name} label={value} />
         )
       )}
     </StyledCategoriesFilter>
   );
 };
 
-export default CategoriesFilter;
+

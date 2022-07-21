@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import toggleSidebarReducer from './toggleSidebarSlice';
-import categoriesFilterReducer from '../components/categories-filter/categoriesFilterSlice';
-import suggestionsListReducer from '../components/suggestions-list/suggestionsListSlice';
+import showSidebarReducer from '../components/hamburger-button/showSidebarSlice';
+import categoryFilterReducer from '../components/categories-filter/categoriesFilterSlice';
+import suggestionsListReducer from '../components/suggestions-list/SuggestionsListSlice';
+import { settingsApi } from '../api/settingsApi';
 
 export default configureStore({
   reducer: {
-    toggle: toggleSidebarReducer,
-    categories: categoriesFilterReducer,
+    show: showSidebarReducer,
+    categories: categoryFilterReducer,
     suggestions: suggestionsListReducer,
+    [settingsApi.reducerPath]: settingsApi.reducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(settingsApi.middleware)
 });

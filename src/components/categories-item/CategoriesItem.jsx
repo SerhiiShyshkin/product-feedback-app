@@ -1,9 +1,9 @@
 import { Chip, styled, Typography } from '@mui/material';
 
 import React from 'react';
-
 import { useDispatch } from 'react-redux';
 import { toggleCategory } from '../categories-filter/categoriesFilterSlice';
+
 
 const StyledCategoriesItem = styled(Chip)(({ theme }) => ({
   padding: '3px 4px 4px 4px',
@@ -25,24 +25,23 @@ const StyledCategoriesItemActive = styled(Chip)(({ theme }) => ({
   },
 }));
 
-export const CategoriesItem = ({ id, name }) => {
+export const CategoriesItem = ({ id, name, label }) => {
   const dispatch = useDispatch();
 
   return (
     <StyledCategoriesItem
-      label={<Typography variant='body4'>{name}</Typography>}
-      onClick={() => dispatch(toggleCategory(id))}
+      label={<Typography variant='body4'>{label}</Typography>}
+      onClick={() => dispatch(toggleCategory(name))}
     />
   );
 };
 
-export const CategoriesItemActive = ({ id, name }) => {
+export const CategoriesItemActive = ({ id, name, label }) => {
   const dispatch = useDispatch();
-
   return (
     <StyledCategoriesItemActive
-      label={<Typography variant='body4'>{name}</Typography>}
-      onClick={() => dispatch(toggleCategory(id))}
+      label={<Typography variant='body4'>{label}</Typography>}
+      onClick={() => dispatch(toggleCategory(name))}
     />
   );
 };

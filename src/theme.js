@@ -7,8 +7,9 @@ import '@fontsource/jost/700.css';
 export const theme = createTheme({
   breakpoints: {
     values: {
-      desktop: 1110,
+      mobile: 327,
       tablet: 689,
+      desktop: 1110,
     },
   },
   palette: {
@@ -91,7 +92,7 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: '#F7F8FD'
+          background: '#F7F8FD',
         },
       },
     },
@@ -106,23 +107,23 @@ export const theme = createTheme({
 });
 
 theme.typography.h2 = {
-  fontSize: '20px',
+  fontSize: '15px',
   fontWeight: '700',
-  lineHeight: '29px',
-  letterSpacing: '-0.25px',
-  [theme.breakpoints.down('tablet')]: {
-    fontSize: '15px',
-    lineHeight: '22px',
-    letterSpacing: '-0.19px',
+  lineHeight: '22px',
+  letterSpacing: '-0.19px',
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: '20px',
+    lineHeight: '29px',
+    letterSpacing: '-0.25px',
   },
 };
 
 theme.typography.body3 = {
-  fontSize: '15px',
+  fontSize: '13px',
   fontWeight: '500',
-  lineHeight: '22px',
-  [theme.breakpoints.down('tablet')]: {
-    fontSize: '13px',
-    lineHeight: '19px',
+  lineHeight: '19px',
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: '15px',
+    lineHeight: '22px',
   },
 };

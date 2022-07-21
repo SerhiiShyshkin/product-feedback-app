@@ -3,12 +3,11 @@
     "title": "Frontend Mentor",
     "subtitle": "Feedback Board"
   },
-  "categoriesFilter": [
-    { "id": 1, "name": "All", "active": true },
-    { "id": 2, "name": "UI", "active": false },
-    { "id": 3, "name": "UX", "active": false },
-    { "id": 4, "name": "Enhancement", "active": false },
-    { "id": 5, "name": "Bug", "active": false },
-    { "id": 6, "name": "Feature", "active": false }
+  "categories": [
+    { "id": 2, "name": "ui", "value": "UI" },
+    { "id": 3, "name": "ux", "value": "UX" },
+    { "id": 4, "name": "enhancement", "value": "Enchncement" },
+    { "id": 5, "name": "bug", "value": "Bug" },
+    { "id": 6, "name": "feature", "value": "Future" }
   ]
 }

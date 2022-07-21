@@ -1,25 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { styled } from '@mui/system';
-import { Container } from '@mui/material';
+import { RoadmapBoardContainer } from "./RadmapBoardStyles"
 
-const RoadmapBorderContainer = styled(Container)(({ theme }) => ({
-    width: '255px',
-    height: '166px',
-    background: theme.palette.common.white,
-    margin: 0,
-    [theme.breakpoints.down('desktop')]: {
-      width: '223px',
-    height: '178px',
-    },
-  }));
 
-const RoadmapBoard = props => {
+export const RoadmapBoard = props => {
   return (
-    <RoadmapBorderContainer>RoadmapBoard</RoadmapBorderContainer>
+    <RoadmapBoardContainer>RoadmapBoard</RoadmapBoardContainer>
   )
 }
 
-RoadmapBoard.propTypes = {}
-
-export default RoadmapBoard
